@@ -4,13 +4,13 @@
 #include <SFML/Graphics.hpp>
 #include "BitmapStore.h"
 #include "GameScreen.h"
-#include "ScreenMangerRemoteControl.h"
+#include "../Screens/ScreenManagerRemoteControl.h"
 #include "ScreenSelection"
 
 class ScreenManager : public ScreenManagerRemoteControl
 {
 private:
-	std::map<std::string, unique_ptr<Screen>> m_Screens;
+	std::map<std::string, std::unique_ptr<Screen>> m_Screens;
 protected:
 	std::string m_CurrentScreen = "Select";
 public:
@@ -28,7 +28,7 @@ public:
 	***********************************************
 	***********************************************
 	*/
-	void ScreenMangareRemoteControl::SwitchScreens(std::string screenToSwitchTo)
+	void ScreenManagerRemoteControl::SwitchScreens(std::string screenToSwitchTo)
 	{
 		m_CurrentScreen = "" + screenToSwitchTo;
 		m_Screens[m_CurrentScreen]->initialise();
