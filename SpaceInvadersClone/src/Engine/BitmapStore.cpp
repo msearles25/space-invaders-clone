@@ -29,3 +29,24 @@ void BitmapStore::addBitmap(const std::string& filename)
 		texture.loadFromFile(filename);
 	}
 }
+
+sf::Texture& BitmapStore::getBitmap(const std::string& filename)
+{
+	// Get the reference to m_Texture using m_s_Instance
+	auto& m = m_s_Instance->m_BitmapMap;
+
+	auto keyValuePair{ m.find(filename) };
+
+	if (keyValuePair != m.end())
+	{
+		return keyValuePair->second;
+	}
+	else
+	{
+#ifdef debuggingConsole
+		std::cout
+			<< "BitmapStore::getBitmap() Texture not found, crash!\n";
+#endif // debuggingConsole
+		return keyValuePair->second;
+	}
+}
