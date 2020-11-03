@@ -23,3 +23,8 @@ Button::Button(sf::Vector2f position,
 	m_Collider = sf::FloatRect(position, sf::Vector2f(width, height));
 }
 
+void Button::draw(sf::RenderWindow& window)
+{
+	window.draw(m_Button);
+	window.draw(m_ButtonText);
+}
