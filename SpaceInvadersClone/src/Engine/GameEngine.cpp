@@ -13,5 +13,30 @@ GameEngine::GameEngine()
 
 void GameEngine::run()
 {
+	while (m_Window.isOpen())
+	{
+		m_DT = m_Clock.restart();
+		m_FPS = m_DT.asSeconds();
+		
+		handleInput();
+		update();
+		draw();
+	}
+}
 
+void GameEngine::handleInput()
+{
+	m_ScreenManager->handleInput(m_Window);
+}
+
+void GameEngine::update()
+{
+	m_ScreenManager->update(m_FPS);
+}
+
+void GameEngine::draw()
+{
+	m_Window.clear(sf::Color::Black);
+	m_ScreenManager->draw(m_Window);
+	m_Window.display();
 }
