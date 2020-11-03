@@ -14,10 +14,28 @@ private:
 protected:
 	std::string m_CurrentScreen = "Select";
 public:
-	BitmapScroe m_BS;
+	BitmapStore m_BS;
 
 	ScreenManager(sf::Vector2i res);
 	void update(float fps);
 	void draw(sf::RenderWindow& window);
 	void handleInput(sf::RenderWindow& window);
+
+	/*
+	***********************************************
+	***********************************************
+	From ScreenManagerRemoteControl interface
+	***********************************************
+	***********************************************
+	*/
+	void ScreenMangareRemoteControl::SwitchScreens(std::string screenToSwitchTo)
+	{
+		m_CurrentScreen = "" + screenToSwitchTo;
+		m_Screens[m_CurrentScreen]->initialise();
+	}
+
+	void ScreenManagerRemoteControl::loadLevelInPlayMode(std::string screenToLoad)
+	{
+		SwitchScreens("Game");
+	}
 };
