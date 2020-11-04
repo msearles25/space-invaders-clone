@@ -52,3 +52,32 @@ void GameScreen::initialize()
 		WorldState::SCORE = 0;
 	}
 }
+
+void GameScreen::update(float fps)
+{
+	Screen::update(fps);
+
+	if (!m_GameOver)
+	{
+		if (WorldState::NUM_INVADERS < 0)
+		{
+			WorldState::WAVE_NUMBER++;
+			m_ScreenManagerRemoteControl->loadLevelInPlayMode("level1");
+		}
+
+		if (WorldState::LIVES <= 0)
+		{
+			m_GameOver = true;
+		}
+	}
+}
+
+void GameScreen::draw(sf::RenderWindow& window)
+{
+	// Change to this screen's view to draw on
+	window.setView(m_View);
+	window.draw(m_BackgroundSprite);
+
+	// Draw the UIPanel view
+	Screen::draw(window);
+}
