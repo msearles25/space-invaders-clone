@@ -21,3 +21,14 @@ GameUIPanel::GameUIPanel(sf::Vector2i res) :
 	m_Text.setCharacterSize(60);
 }
 
+void GameUIPanel::draw(sf::RenderWindow& window)
+{
+	UIPanel::draw(window);
+
+	std::stringstream ss;
+	ss << "Score: " << WorldState::SCORE << " Lives: "
+		<< WorldState::LIVES << " Wave: " << WorldState::WAVE_NUMBER;
+	m_Text.setString(ss.str());
+
+	window.draw(m_Text);
+}
