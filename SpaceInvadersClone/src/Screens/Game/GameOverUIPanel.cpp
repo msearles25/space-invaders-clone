@@ -29,3 +29,35 @@ GameOverUIPanel::GameOverUIPanel(sf::Vector2i res) :
 	initializeButtons();
 }
 
+void GameOverUIPanel::initializeButtons()
+{
+	addButton(
+		m_ButtonPadding,
+		m_ButtonPadding,
+		m_ButtonWidth,
+		m_ButtonHeight,
+		0, 255, 0,
+		"Play");
+
+	addButton(
+		m_ButtonWidth + (m_ButtonPadding * 2),
+		m_ButtonPadding,
+		m_ButtonWidth,
+		m_ButtonHeight,
+		255, 0, 0,
+		"Home");
+}
+
+void GameOverUIPanel::draw(sf::RenderWindow& window)
+{
+	if (GameScreen::m_GameOver)
+	{
+		show();
+		UIPanel::draw(window);
+		window.draw(m_Text);
+	}
+	else
+	{
+		hide();
+	}
+}
