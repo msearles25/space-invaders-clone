@@ -12,3 +12,19 @@ void Screen::addPanel(std::unique_ptr<UIPanel> uip,
 	m_Panels.push_back(move(uip));
 	m_InputHandlers.push_back(ih);
 }
+
+void Screen::handleInput(sf::RenderWindow& window)
+{
+	sf::Event event;
+	auto itr{ m_InputHandlers.begin() };
+	auto end{ m_InputHandlers.end() };
+	
+	while (window.pollEvent(event))
+	{
+		for (itr; itr < end; ++itr)
+		{
+			(*itr)->handleInput(window, event);
+		}
+	}
+}
+
