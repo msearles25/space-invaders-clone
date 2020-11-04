@@ -48,3 +48,18 @@ void InputHandler::handleInput(sf::RenderWindow& window, sf::Event& event)
 	}
 	handleGamepad();
 }
+
+sf::View* InputHandler::getPointerToUIView()
+{
+	return m_PointerToUIPanelView;
+}
+
+ScreenManagerRemoteControl* InputHandler::getPointerToScreenManagerRemoteControl()
+{
+	return m_ScreenManagerRemoteControl;
+}
+
+Screen* InputHandler::getParentScreen()
+{
+	return m_ParentScreen;
+}
