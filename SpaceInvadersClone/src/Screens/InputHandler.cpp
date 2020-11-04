@@ -15,5 +15,36 @@ void InputHandler::initializeInputHandler(
 
 void InputHandler::handleInput(sf::RenderWindow& window, sf::Event& event)
 {
+	// Handle any key presses
+	if (event.type == sf::Event::KeyPressed)
+	{
+		handleKeyPressed(event, window);
+	}
 
+	if (event.type == sf::Event::KeyReleased)
+	{
+		handleKeyReleased(event, window);
+	}
+
+	// Handle any left mouse clicks that are released
+	if (event.type == sf::Event::MouseButtonReleased)
+	{
+		auto end = m_Buttons.end();
+
+		for (auto i{ m_Buttons.begin() }; i != end; ++i)
+		{
+			if ((*i)->m_Collider.contains(
+				window.mapPixelToCoords(
+					sf::Mouse::getPosition(), 
+					(*getPointerToUIView()))))
+			{
+				// Capture the text of the button that was just interacted with
+				// and pass it to the specialized version
+				// of this class if implemented
+				handleLeftClick((*i)->m_Text, window);
+				break;
+			}
+		}
+	}
+	handleGamepad();
 }
