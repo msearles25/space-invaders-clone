@@ -27,5 +27,7 @@ void SelectScreen::draw(sf::RenderWindow& window)
 	window.draw(m_BackgroundSprite);
 
 	// Draw the UIPanel view
+	// Calls the draw on the base Screen class which will draw all of the
+	// panels and their related buttons
 	Screen::draw(window);
 }
