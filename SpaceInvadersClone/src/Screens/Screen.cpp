@@ -21,10 +21,22 @@ void Screen::handleInput(sf::RenderWindow& window)
 	
 	while (window.pollEvent(event))
 	{
-		for (itr; itr < end; ++itr)
+		for (itr; itr != end; ++itr)
 		{
 			(*itr)->handleInput(window, event);
 		}
 	}
 }
 
+void Screen::update(float fps) {}
+
+void Screen::draw(sf::RenderWindow& window)
+{
+	auto itr{ m_Panels.begin() };
+	auto end{ m_Panels.end() };
+
+	for (itr; itr != end; ++itr)
+	{
+		(*itr)->draw(window);
+	}
+}
