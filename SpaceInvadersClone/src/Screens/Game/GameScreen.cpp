@@ -16,7 +16,7 @@ GameScreen::GameScreen(ScreenManagerRemoteControl* smrc, sf::Vector2i res)
 
 	auto m_GOIH{ std::make_shared<GameOverInputHandler>() };
 	auto gouip{ std::make_unique<GameOverUIPanel>(res) };
-	addPanel(std::move(goip), smrc, m_GOIH);
+	addPanel(std::move(gouip), smrc, m_GOIH);
 	
 	m_ScreenManagerRemoteControl = smrc;
 	float screenRatio{ sf::VideoMode::getDesktopMode().width / 
@@ -33,4 +33,22 @@ GameScreen::GameScreen(ScreenManagerRemoteControl* smrc, sf::Vector2i res)
 	auto textureSize{ m_BackgroundSprite.getTexture()->getSize() };
 	m_BackgroundSprite.setScale(float(m_View.getSize().x) / textureSize.x,
 		float(m_View.getSize().y / textureSize.y));
+}
+
+void GameScreen::initialize()
+{
+	m_GIH->initialize();
+
+	WorldState::NUM_INVADERS = 0;
+
+	m_GameOver = false;
+
+	if (WorldState::WAVE_NUMBER == 0)
+	{
+		WorldState::NUM_INVADERS_AT_START = WorldState::NUM_INVADERS;
+
+		WorldState::WAVE_NUMBER = 1;
+		WorldState::LIVES = 3;
+		WorldState::SCORE = 0;
+	}
 }
