@@ -16,7 +16,6 @@ public:
 
 	GameScreen(ScreenManagerRemoteControl* smrc, sf::Vector2i res);
 	void initialize() override;
-	virtual void update(float fps);
+	virtual void update(float fps) override;
 	virtual void draw(sf::RenderWindow& window);
 };
-
