@@ -5,7 +5,7 @@
 #include "BitmapStore.h"
 #include "GameScreen.h"
 #include "../Screens/ScreenManagerRemoteControl.h"
-#include "ScreenSelection"
+#include "../Screens/Select/SelectScreen.h"
 
 class ScreenManager : public ScreenManagerRemoteControl
 {
@@ -31,7 +31,7 @@ public:
 	void ScreenManagerRemoteControl::SwitchScreens(std::string screenToSwitchTo)
 	{
 		m_CurrentScreen = "" + screenToSwitchTo;
-		m_Screens[m_CurrentScreen]->initialise();
+		m_Screens[m_CurrentScreen]->initialize();
 	}
 
 	void ScreenManagerRemoteControl::loadLevelInPlayMode(std::string screenToLoad)
