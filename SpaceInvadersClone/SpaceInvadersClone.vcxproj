@@ -144,7 +144,26 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Main.cpp" />
+    <ClCompile Include="src\Screens\InputHandler.cpp" />
+    <ClCompile Include="src\Screens\Button.cpp" />
+    <ClCompile Include="src\Screens\ScreenManagerRemoteControl.cpp" />
+    <ClCompile Include="src\Engine\BitmapStore.cpp" />
+    <ClCompile Include="src\Engine\ScreenManager.cpp" />
+    <ClCompile Include="src\Engine\SoundEngine.cpp" />
+    <ClCompile Include="src\Engine\GameEngine.cpp" />
+    <ClCompile Include="src\Engine\Main.cpp" />
+    <ClCompile Include="src\Screens\UIPanel.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\Screens\InputHandler.h" />
+    <ClInclude Include="src\Screens\Button.h" />
+    <ClInclude Include="src\Screens\ScreenManagerRemoteControl.h" />
+    <ClInclude Include="src\Engine\BitmapStore.h" />
+    <ClInclude Include="src\Engine\ScreenManager.h" />
+    <ClInclude Include="src\Engine\SoundEngine.h" />
+    <ClInclude Include="src\Engine\GameEngine.h" />
+    <ClInclude Include="src\Engine\DevelopState.h" />
+    <ClInclude Include="src\Screens\UIPanel.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
