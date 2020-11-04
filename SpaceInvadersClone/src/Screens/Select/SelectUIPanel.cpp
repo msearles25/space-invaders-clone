@@ -27,3 +27,29 @@ SelectUIPanel::SelectUIPanel(sf::Vector2i res) :
 	initializeButtons();
 }
 
+void SelectUIPanel::initializeButtons()
+{
+	// Buttons are position relative to the top left courner of the UIPanel(m_View in UIPanel)
+	addButton(
+		m_ButtonPadding,
+		m_ButtonPadding,
+		m_ButtonWidth,
+		m_ButtonHeight,
+		0, 255, 0,
+		"Play");
+
+	addButton(
+		m_ButtonWidth + (m_ButtonPadding * 2),
+		m_ButtonPadding,
+		m_ButtonWidth,
+		m_ButtonHeight,
+		255, 0, 0,
+		"Quit");
+}
+
+void SelectUIPanel::draw(sf::RenderWindow& window)
+{
+	show();
+	UIPanel::draw(window);
+	window.draw(m_Text);
+}
