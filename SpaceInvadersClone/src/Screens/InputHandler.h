@@ -9,13 +9,13 @@ class InputHandler
 {
 private:
 	Screen* m_ParentScreen;
-	std::vector<std::shared_ptr<Button>> m_Button;
+	std::vector<std::shared_ptr<Button>> m_Buttons;
 	sf::View* m_PointerToUIPanelView;
 	ScreenManagerRemoteControl* m_ScreenManagerRemoteControl;
 public:
 	void initializeInputHandler(
 		ScreenManagerRemoteControl* sw,
-		std::vector<std::shared_ptr<Button>> m_Buttons,
+		std::vector<std::shared_ptr<Button>> buttons,
 		sf::View* pointerToView,
 		Screen* parentScreen);
 
