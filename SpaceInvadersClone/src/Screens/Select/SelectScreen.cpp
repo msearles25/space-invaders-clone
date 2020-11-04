@@ -19,3 +19,13 @@ SelectScreen::SelectScreen(ScreenManagerRemoteControl* smrc, sf::Vector2i res)
 		float(m_View.getSize().x) / textureSize.x,
 		float(m_View.getSize().y) / textureSize.y);
 }
+
+void SelectScreen::draw(sf::RenderWindow& window)
+{
+	// Change to this screen's view for drawing
+	window.setView(m_View);
+	window.draw(m_BackgroundSprite);
+
+	// Draw the UIPanel view
+	Screen::draw(window);
+}
