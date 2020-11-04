@@ -3,7 +3,7 @@
 #include <map>
 #include <SFML/Graphics.hpp>
 #include "BitmapStore.h"
-#include "GameScreen.h"
+#include "../Screens/Game/GameScreen.h"
 #include "../Screens/ScreenManagerRemoteControl.h"
 #include "../Screens/Select/SelectScreen.h"
 
