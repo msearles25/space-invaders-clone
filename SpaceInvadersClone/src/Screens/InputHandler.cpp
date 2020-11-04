@@ -49,6 +49,18 @@ void InputHandler::handleInput(sf::RenderWindow& window, sf::Event& event)
 	handleGamepad();
 }
 
+void InputHandler::handleGamepad()
+{} // Do nothing unless handled by a derived class
+
+void InputHandler::handleKeyPressed(sf::Event& event, sf::RenderWindow& window)
+{} // Do nothing unless handled by a derived class
+
+void InputHandler::handleKeyReleased(sf::Event& event, sf::RenderWindow& window)
+{} // Do nothing unless handled by a derived class
+
+void InputHandler::handleLeftClick(std::string& buttonInteractWidth, sf::RenderWindow& window)
+{}	// Do nothing unless handled by a derived class
+
 sf::View* InputHandler::getPointerToUIView()
 {
 	return m_PointerToUIPanelView;
