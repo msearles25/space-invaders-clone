@@ -147,6 +147,9 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="src\GameObjects\GraphicsComponent.cpp" />
+    <ClCompile Include="src\GameObjects\RectColliderComponent.cpp" />
+    <ClCompile Include="src\GameObjects\ColliderComponent.cpp" />
     <ClCompile Include="src\GameObjects\Component.cpp" />
     <ClCompile Include="src\Screens\Game\GameOverUIPanel.cpp" />
     <ClCompile Include="src\Screens\Game\GameOverInputHandler.cpp" />
@@ -168,6 +171,9 @@
     <ClCompile Include="src\Screens\UIPanel.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="src\GameObjects\GraphicsComponent.h" />
+    <ClInclude Include="src\GameObjects\RectColliderComponent.h" />
+    <ClInclude Include="src\GameObjects\ColliderComponent.h" />
     <ClInclude Include="src\GameObjects\Component.h" />
     <ClInclude Include="src\Screens\Game\GameOverUIPanel.h" />
     <ClInclude Include="src\Screens\Game\GameOverInputHandler.h" />
