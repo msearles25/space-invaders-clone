@@ -6,6 +6,7 @@ class GameObject;
 
 class Component
 {
+public:
 	virtual std::string getType() = 0;
 	virtual std::string getSpecificType() = 0;
 	virtual void disableComponent() = 0;

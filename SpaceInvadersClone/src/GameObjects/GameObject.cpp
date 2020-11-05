@@ -45,3 +45,40 @@ std::shared_ptr<TransformComponent> GameObject::getTransformComponent()
 		m_Components[m_TransformComponentLocation]);
 }
 
+void GameObject::addComponent(std::shared_ptr<Component> component)
+{
+	m_Components.push_back(component);
+	component->enableComponent();
+
+	if (component->getType() == "update")
+	{
+		m_HasUpdateComponent = true;
+		m_NumberUpdateComponents++;
+		if (m_NumberUpdateComponents == 1)
+		{
+			m_FirstUpdateComponentLocation = m_Components.size() - 1;
+		}
+	}
+	else if (component->getType() == "graphics")
+	{
+		// No iteration in draw method needed
+		m_HasGraphicsComponent = true;
+		m_GraphicsComponentLocation = m_Components.size() - 1;
+	}
+	else if (component->getType() == "transform")
+	{
+		// Remember where the transform component is
+		m_TransformComponentLocation = m_Components.size() - 1;
+	}
+	else if (component->getType() == "collider" && component->getSpecificType() == "rect")
+	{
+		// Remember where the collider component is 
+		m_HasCollider = true;
+		m_NumberRectColliderComponents++;
+		if (m_NumberRectColliderComponents == 1)
+		{
+			m_FirstRectCollderComponentLocation = m_Components.size() - 1;
+		}
+	}
+}
+
