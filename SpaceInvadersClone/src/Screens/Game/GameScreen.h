@@ -1,6 +1,6 @@
 #pragma once
 #include "GameInputHandler.h"
-#include "GameOverInputHandler"
+#include "GameOverInputHandler.h"
 #include "../Screen.h"
 
 class GameScreen : public Screen

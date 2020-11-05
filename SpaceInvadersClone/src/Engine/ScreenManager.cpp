@@ -4,7 +4,7 @@ ScreenManager::ScreenManager(sf::Vector2i res)
 {
 	m_Screens["Game"] = std::unique_ptr<GameScreen>(new GameScreen(this, res));
 
-	m_Screens["Select"] = std::unique_ptr<SelectScreen>)(new SelectScreen(this, res));
+	m_Screens["Select"] = std::unique_ptr<SelectScreen>(new SelectScreen(this, res));
 }
 
 void ScreenManager::handleInput(sf::RenderWindow& window)

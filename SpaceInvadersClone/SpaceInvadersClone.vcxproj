@@ -144,6 +144,15 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="src\Screens\Game\GameOverUIPanel.cpp" />
+    <ClCompile Include="src\Screens\Game\GameOverInputHandler.cpp" />
+    <ClCompile Include="src\Screens\Game\GameUIPanel.cpp" />
+    <ClCompile Include="src\Screens\Game\GameInputHandler.cpp" />
+    <ClCompile Include="src\Screens\Game\GameScreen.cpp" />
+    <ClCompile Include="src\Screens\Select\SelectUIPanel.cpp" />
+    <ClCompile Include="src\Screens\Select\SelectInputHandler.cpp" />
+    <ClCompile Include="src\Screens\Select\SelectScreen.cpp" />
+    <ClCompile Include="src\Screens\Screen.cpp" />
     <ClCompile Include="src\Screens\InputHandler.cpp" />
     <ClCompile Include="src\Screens\Button.cpp" />
     <ClCompile Include="src\Screens\ScreenManagerRemoteControl.cpp" />
@@ -155,6 +164,16 @@
     <ClCompile Include="src\Screens\UIPanel.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="src\Screens\Game\GameOverUIPanel.h" />
+    <ClInclude Include="src\Screens\Game\GameOverInputHandler.h" />
+    <ClInclude Include="src\Screens\Game\GameUIPanel.h" />
+    <ClInclude Include="src\Screens\Game\GameInputHandler.h" />
+    <ClInclude Include="src\Screens\Game\GameScreen.h" />
+    <ClInclude Include="src\Screens\Select\SelectUIPanel.h" />
+    <ClInclude Include="src\Screens\Select\SelectInputHandler.h" />
+    <ClInclude Include="src\Screens\Select\SelectScreen.h" />
+    <ClInclude Include="src\Engine\WorldState.h" />
+    <ClInclude Include="src\Screens\Screen.h" />
     <ClInclude Include="src\Screens\InputHandler.h" />
     <ClInclude Include="src\Screens\Button.h" />
     <ClInclude Include="src\Screens\ScreenManagerRemoteControl.h" />
