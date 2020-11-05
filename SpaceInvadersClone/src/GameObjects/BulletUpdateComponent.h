@@ -15,7 +15,7 @@ class BulletUpdateComponent : public UpdateComponent
 
 	int m_AlienBulletSpeedModifier;
 	int m_ModifierRandomComponent{ 5 };
-	int MinimumAdditionalModifier{ 5 };
+	int m_MinimumAdditionalModifier{ 5 };
 
 	bool m_MovingUp{ true };
 public:

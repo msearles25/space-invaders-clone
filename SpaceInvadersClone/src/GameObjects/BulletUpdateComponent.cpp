@@ -1,3 +1,4 @@
+#include <stdlib.h>
 #include "BulletUpdateComponent.h"
 #include "../Engine/WorldState.h"
 
@@ -17,3 +18,20 @@ void BulletUpdateComponent::spawnForPlayer(sf::Vector2f spawnPosition)
 		m_TC->getSize().x, m_TC->getSize().y);
 }
 
+void BulletUpdateComponent::spawnForInvader(sf::Vector2f spawnPosition)
+{
+	m_MovingUp = false;
+	m_BelongsToPlayer = false;
+	m_IsSpawned = true;
+
+	srand((int)time(0));
+	m_AlienBulletSpeedModifier = (
+		(rand() % m_ModifierRandomComponent)) + m_MinimumAdditionalModifier;
+
+	m_TC->getLocation().x = spawnPosition.x;
+	m_TC->getLocation().y = spawnPosition.y;
+	// Update the collider
+	m_RCC->setOrMoveCollider(
+		m_TC->getLocation().x, m_TC->getLocation().y,
+		m_TC->getSize().x, m_TC->getSize().y);
+}
