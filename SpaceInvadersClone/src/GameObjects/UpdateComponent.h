@@ -38,3 +38,4 @@ public:
 
 	void Component::start(GameObjectSharer* gos, GameObject* self) {}
 };
+
