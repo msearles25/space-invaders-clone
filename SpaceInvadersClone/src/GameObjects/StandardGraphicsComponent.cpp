@@ -14,3 +14,10 @@ void StandardGraphicsComponent::initializeGraphics(
 
 	m_Sprite.setColor(sf::Color(0, 255, 0));
 }
+
+void StandardGraphicsComponent::draw(
+	sf::RenderWindow& window, std::shared_ptr<TransformComponent> t)
+{
+	m_Sprite.setPosition(t->getLocation);
+	window.draw(m_Sprite);
+}
