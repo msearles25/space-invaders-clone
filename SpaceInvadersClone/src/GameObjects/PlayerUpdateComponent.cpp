@@ -52,3 +52,34 @@ void PlayerUpdateComponent::update(float fps)
 		m_TC->getLocation().y = WorldState::WORLD_HEIGHT / 2;
 	}
 }
+
+void PlayerUpdateComponent::updateShipTravelWithController(float x, float y)
+{
+	m_XExtent = x;
+	m_YExtent = y;
+}
+
+void PlayerUpdateComponent::moveLeft()
+{
+	m_IsHoldingLeft = true;
+	stopRight();
+}
+
+void PlayerUpdateComponent::moveRight()
+{
+	m_IsHoldingRight = true;
+	stopLeft();
+}
+
+void PlayerUpdateComponent::moveUp()
+{
+	m_IsHoldingUp = true;
+	stopDown();
+}
+
+void PlayerUpdateComponent::moveDown()
+{
+	m_IsHoldingDown = true;
+	stopUp();
+}
+
