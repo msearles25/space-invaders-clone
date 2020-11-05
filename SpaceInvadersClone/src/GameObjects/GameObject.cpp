@@ -140,3 +140,18 @@ std::shared_ptr<Component> GameObject::getComponentByTypeAndSpecificType(
 
 }
 
+sf::FloatRect& GameObject::getEncompassRectCollider()
+{
+	if (m_HasCollider)
+	{
+		return std::static_pointer_cast<RectColliderComponent>(
+			m_Components[m_FirstRectCollderComponentLocation])->getColliderRectF();
+	}
+}
+
+std::string GameObject::getEncompassRectColliderTag()
+{
+	return std::static_pointer_cast<RectColliderComponent>(
+		m_Components[m_FirstRectCollderComponentLocation])->getColliderTag();
+}
+
