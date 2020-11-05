@@ -52,3 +52,21 @@ void InvaderUpdateComponent::dropDownAndReverse()
 		(WorldState::NUM_INVADERS_AT_START - 
 			WorldState::NUM_INVADERS) * m_SpeedModifier;
 }
+
+bool InvaderUpdateComponent::isMovingRight()
+{
+	return m_MoveRight;
+}
+
+void InvaderUpdateComponent::initializeBulletSpawner(
+	BulletSpawner* bulletSpawner, int randSeed)
+{
+	m_BulletSpawner = bulletSpawner;
+	m_RandSeed = randSeed;
+	srand(m_RandSeed);
+	m_TimeBetweenShots = (rand() % 15) + m_RandSeed;
+
+	m_AccuracyModifier = (rand() % 2);
+	m_AccuracyModifier += 0 + static_cast<float>(
+		rand()) / (static_cast<float>(RAND_MAX / (10)));
+}
