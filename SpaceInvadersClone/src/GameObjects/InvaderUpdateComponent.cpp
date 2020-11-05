@@ -43,3 +43,12 @@ void InvaderUpdateComponent::update(float fps)
 		}
 	}
 }
+
+void InvaderUpdateComponent::dropDownAndReverse()
+{
+	m_MoveRight = !m_MoveRight;
+	m_TC->getLocation().y += m_TC->getSize().y;
+	m_Speed += (WorldState::WAVE_NUMBER) +
+		(WorldState::NUM_INVADERS_AT_START - 
+			WorldState::NUM_INVADERS) * m_SpeedModifier;
+}
