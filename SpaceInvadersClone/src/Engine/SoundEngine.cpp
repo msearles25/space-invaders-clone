@@ -35,3 +35,8 @@ void SoundEngine::playInvaderExplode()
 {
 	m_s_Instance->m_InvaderExplodeSound.play();
 }
+
+void SoundEngine::playClick()
+{
+	m_s_Instance->m_ClickSound.play();
+}

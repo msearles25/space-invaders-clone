@@ -5,6 +5,8 @@
 #include "ScreenManagerRemoteControl.h"
 #include "UIPanel.h"
 
+class InputHandler;
+
 class Screen
 {
 private:

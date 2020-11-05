@@ -15,7 +15,7 @@ Button::Button(sf::Vector2f position,
 	float textPaddingY = height / 10;
 	m_ButtonText.setCharacterSize(height * .7f);
 	m_ButtonText.setString(text);
-	m_Font.loadFromFile("Content/fonts/Robo-Bold.ttf");
+	m_Font.loadFromFile("Content/fonts/Roboto-Bold.ttf");
 	m_ButtonText.setFont(m_Font);
 	m_ButtonText.setPosition(sf::Vector2f(
 		(position.x + textPaddingX),

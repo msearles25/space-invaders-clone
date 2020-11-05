@@ -1,7 +1,7 @@
 #pragma once
 #include "../UIPanel.h"
 
-class GameOverUIPanel : UIPanel
+class GameOverUIPanel : public UIPanel
 {
 private:
 	void initializeButtons();

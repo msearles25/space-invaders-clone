@@ -19,8 +19,8 @@ GameScreen::GameScreen(ScreenManagerRemoteControl* smrc, sf::Vector2i res)
 	addPanel(std::move(gouip), smrc, m_GOIH);
 	
 	m_ScreenManagerRemoteControl = smrc;
-	float screenRatio{ sf::VideoMode::getDesktopMode().width / 
-		sf::VideoMode::getDesktopMode().height };
+	float screenRatio{ float(sf::VideoMode::getDesktopMode().width / 
+		sf::VideoMode::getDesktopMode().height) };
 
 	WorldState::WORLD_HEIGHT = WorldState::WORLD_WIDTH / screenRatio;
 

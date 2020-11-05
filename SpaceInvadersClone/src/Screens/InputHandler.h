@@ -5,6 +5,8 @@
 #include "Screen.h"
 #include "ScreenManagerRemoteControl.h"
 
+class Screen;
+
 class InputHandler
 {
 private:
