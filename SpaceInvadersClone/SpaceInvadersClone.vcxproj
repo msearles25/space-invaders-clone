@@ -147,6 +147,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="src\GameObjects\Component.cpp" />
     <ClCompile Include="src\Screens\Game\GameOverUIPanel.cpp" />
     <ClCompile Include="src\Screens\Game\GameOverInputHandler.cpp" />
     <ClCompile Include="src\Screens\Game\GameUIPanel.cpp" />
@@ -167,6 +168,7 @@
     <ClCompile Include="src\Screens\UIPanel.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="src\GameObjects\Component.h" />
     <ClInclude Include="src\Screens\Game\GameOverUIPanel.h" />
     <ClInclude Include="src\Screens\Game\GameOverInputHandler.h" />
     <ClInclude Include="src\Screens\Game\GameUIPanel.h" />
