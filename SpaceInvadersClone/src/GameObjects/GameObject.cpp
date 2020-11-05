@@ -21,3 +21,27 @@ void GameObject::update(float fps)
 		}
 	}
 }
+
+void GameObject::draw(sf::RenderWindow& window)
+{
+	if (m_Active && m_HasGraphicsComponent)
+	{
+		if (m_Components[m_GraphicsComponentLocation]->enabled())
+		{
+			getGraphicsComponent()->draw(window, getTransformComponent());
+		}
+	}
+}
+
+std::shared_ptr<GraphicsComponent> GameObject::getGraphicsComponent()
+{
+	return std::static_pointer_cast<GraphicsComponent>(
+		m_Components[m_GraphicsComponentLocation]);
+}
+
+std::shared_ptr<TransformComponent> GameObject::getTransformComponent()
+{
+	return std::static_pointer_cast<TransformComponent>(
+		m_Components[m_TransformComponentLocation]);
+}
+
