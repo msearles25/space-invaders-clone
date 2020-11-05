@@ -83,3 +83,22 @@ void PlayerUpdateComponent::moveDown()
 	stopUp();
 }
 
+void PlayerUpdateComponent::stopLeft()
+{
+	m_IsHoldingLeft = false;
+}
+
+void PlayerUpdateComponent::stopRight()
+{
+	m_IsHoldingRight = false;	
+}
+
+void PlayerUpdateComponent::stopUp()
+{
+	m_IsHoldingUp = false;
+}
+
+void PlayerUpdateComponent::stopDown()
+{
+	m_IsHoldingDown = false;
+}
