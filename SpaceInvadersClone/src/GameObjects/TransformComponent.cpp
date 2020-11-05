@@ -8,7 +8,7 @@ TransformComponent::TransformComponent(
 	m_Location = location;
 }
 
-sf::Vector2f& TransformComponent::getLoction()
+sf::Vector2f& TransformComponent::getLocation()
 {
 	return m_Location;
 }

@@ -14,7 +14,7 @@ private:
 public:
 	TransformComponent(float width, float height, sf::Vector2f location);
 
-	sf::Vector2f& getLoction();
+	sf::Vector2f& getLocation();
 	sf::Vector2f getSize();
 
 	/***********************************************
