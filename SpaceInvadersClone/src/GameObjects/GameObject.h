@@ -30,8 +30,8 @@ public:
 	void setActive();
 	void setInactive();
 	bool isActive();
-	void setTage(sf::String tag);
-	void getTag();
+	void setTag(sf::String tag);
+	std::string getTag();
 
 	void start(GameObjectSharer* gos);
 

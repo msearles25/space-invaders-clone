@@ -82,3 +82,61 @@ void GameObject::addComponent(std::shared_ptr<Component> component)
 	}
 }
 
+void GameObject::setActive()
+{
+	m_Active = true;
+}
+
+void GameObject::setInactive()
+{
+	m_Active = false;
+}
+
+bool GameObject::isActive()
+{
+	return m_Active;
+}
+
+void GameObject::setTag(sf::String tag)
+{
+	m_Tag = "" + tag;
+}
+
+std::string GameObject::getTag()
+{
+	return m_Tag;
+}
+
+void GameObject::start(GameObjectSharer* gos)
+{
+	auto it{ m_Components.begin() };
+	auto end{ m_Components.end() };
+	for (it; it < end; ++it)
+	{
+		(*it)->start(gos, this);
+	}
+}
+
+// SLOW -- only use this in a start function
+std::shared_ptr<Component> GameObject::getComponentByTypeAndSpecificType(
+	std::string type, std::string specificType)
+{
+	auto it{ m_Components.begin() };
+	auto end{ m_Components.end() };
+	for (it; it < end; ++it)
+	{
+		if ((*it)->getType() == type)
+		{
+			if ((*it)->getSpecificType() == specificType)
+			{
+				return (*it);
+			}
+		}
+	}
+#ifdef debuggingErrors
+	std::cout << "GameObject.cpp::getComponentByTypeAndSpecificType - "
+		<< "COMPONENT NOT FOUND, ERROR!\n";
+#endif // debuggingErrors
+
+}
+
