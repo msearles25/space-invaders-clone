@@ -155,3 +155,18 @@ std::string GameObject::getEncompassRectColliderTag()
 		m_Components[m_FirstRectCollderComponentLocation])->getColliderTag();
 }
 
+std::shared_ptr<UpdateComponent> GameObject::getFirstUpdateComponent()
+{
+	return std::static_pointer_cast<UpdateComponent>(
+		m_Components[m_FirstUpdateComponentLocation]);
+}
+
+bool GameObject::hasCollider()
+{
+	return m_HasCollider;
+}
+
+bool GameObject::hasUpdateComponent()
+{
+	return m_HasUpdateComponent;
+}
