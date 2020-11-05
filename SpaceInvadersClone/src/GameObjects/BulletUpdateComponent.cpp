@@ -35,3 +35,13 @@ void BulletUpdateComponent::spawnForInvader(sf::Vector2f spawnPosition)
 		m_TC->getLocation().x, m_TC->getLocation().y,
 		m_TC->getSize().x, m_TC->getSize().y);
 }
+
+void BulletUpdateComponent::deSpawn()
+{
+	m_IsSpawned = false;
+}
+
+bool BulletUpdateComponent::isMovingUp()
+{
+	return m_MovingUp;
+}

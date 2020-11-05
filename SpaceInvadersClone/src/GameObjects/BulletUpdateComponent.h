@@ -25,7 +25,7 @@ public:
 	void spawnForPlayer(sf::Vector2f spawnPosition);
 	void spawnForInvader(sf::Vector2f spawnPosition);
 	void deSpawn();
-	bool isMoving();
+	bool isMovingUp();
 
 	/***********************************************
 	***********************************************
