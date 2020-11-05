@@ -7,7 +7,7 @@ class ColliderComponent : public Component
 	std::string m_Type{ "collider" };
 	bool m_Enabled{ false };
 public:
-	/*
+/*
 ***********************************************
 ***********************************************
 From Component interface
