@@ -45,3 +45,28 @@ bool BulletUpdateComponent::isMovingUp()
 {
 	return m_MovingUp;
 }
+
+void BulletUpdateComponent::update(float fps)
+{
+	if (m_IsSpawned)
+	{
+		if (isMovingUp)
+		{
+			m_TC->getLocation().y -= m_Speed * fps;
+		}
+		else
+		{
+			m_TC->getLocation().y += m_Speed / m_AlienBulletSpeedModifier * fps;
+		}
+
+		if (m_TC->getLocation().y > WorldState::WORLD_HEIGHT ||
+			m_TC->getLocation().y < -2)
+		{
+			deSpawn();
+		}
+
+		// Update the collider
+		m_RCC->setOrMoveCollider(m_TC->getLocation().x, m_TC->getLocation().y,
+			m_TC->getSize().x, m_TC->getSize().y);
+	}
+}
