@@ -18,6 +18,6 @@ void StandardGraphicsComponent::initializeGraphics(
 void StandardGraphicsComponent::draw(
 	sf::RenderWindow& window, std::shared_ptr<TransformComponent> t)
 {
-	m_Sprite.setPosition(t->getLocation);
+	m_Sprite.setPosition(t->getLocation());
 	window.draw(m_Sprite);
 }
