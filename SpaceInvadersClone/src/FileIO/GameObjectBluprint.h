@@ -27,7 +27,7 @@ public:
 	void setLocationY(float locationY);
 	void setName(std::string name);
 	std::string getName();
-	std::vector<std::string> getComponentList();
+	std::vector<std::string>& getComponentList();
 	void addComponentList(std::string newComponent);
 	std::string getBitmapName();
 	void setBitmapName(std::string bitmapName);
