@@ -17,7 +17,8 @@ void PhysicsEnginePlayMode::detectInvaderCollisons(
 
 	for (invaderIt; invaderIt < invaderEnd; ++invaderIt)
 	{
-		if ((*invaderIt).getTag() == "invader")
+		if ((*invaderIt).isActive() 
+			&& (*invaderIt).getTag() == "invader")
 		{
 			auto bulletIt{ objects.begin() };
 			// Jump to the first bullet
@@ -46,6 +47,64 @@ void PhysicsEnginePlayMode::detectInvaderCollisons(
 					(*invaderIt).setInactive();
 				}
 			}
+		}
+	}
+}
+
+void PhysicsEnginePlayMode::detectPlayerCollisionsAndInvaderDirecton(
+	std::vector<GameObject>& objects,
+	const std::vector<int>& bulletPositions)
+{
+	sf::Vector2f offScreen(-1, -1);
+
+	sf::FloatRect playerCollider{ m_Player->getEncompassRectCollider() };
+	std::shared_ptr<TransformComponent> playerTransform{ m_Player->getTransformComponent() };
+	sf::Vector2f playerLocation{ playerTransform->getLocation() };
+
+	auto it{ objects.begin() };
+	auto end{ objects.end() };
+
+	for (it; it < end; ++it)
+	{
+		if((*it).isActive() 
+			&& (*it).hasCollider()
+			&& (*it).getTag() != "player")
+		{
+			// Get a reference to all the parts of the current
+			// game object that we might need
+			sf::FloatRect currentCollider{ (*it).getEncompassRectCollider() };
+			
+			// Detect collisions between object with the player
+			if (currentCollider.intersects(playerCollider))
+			{
+				if ((*it).getTag() == "bullet")
+				{
+					SoundEngine::playPlayerExplode();
+					WorldState::LIVES--;
+					(*it).getTransformComponent()->getLocation() = offScreen;
+				}
+
+				if ((*it).getTag() == "invader")
+				{
+					SoundEngine::playPlayerExplode();
+					SoundEngine::playInvaderExplode();
+					WorldState::LIVES--;
+					(*it).getTransformComponent()->getLocation() = offScreen;
+					
+					WorldState::SCORE++;
+					(*it).setInactive();
+				}
+			}
+
+			std::shared_ptr<TransformComponent> currentTransfrom{ (*it).getTransformComponent() };
+			
+			sf::Vector2f currentLocation{ currentTransfrom->getLocation() };
+
+			std::string currentTag{ (*it).getTag() };
+			sf::Vector2f currentSize{ currentTransfrom->getSize() };
+
+			// Handle the direction and descent of the invaders
+
 		}
 	}
 }
