@@ -1,4 +1,4 @@
-#include "GameObjectSharer.h"
+#include "BulletSpawner.h"
 
 /*******************************
 ***** THIS IS AN INTERFACE *****
