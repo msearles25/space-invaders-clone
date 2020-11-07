@@ -8,10 +8,10 @@ private:
 	std::shared_ptr<PlayerUpdateComponent> m_PUC;
 
 	GameObject* m_Player;
-	bool m_InvaderHitWallThisFram{ false };
-	bool m_InvaderHitWallPreviousFram{ false };
-	bool m_NeedToDropDownAndRevers{ false };
-	bool m_CompletedDropDownAndRevers{ false };
+	bool m_InvaderHitWallThisFrame{ false };
+	bool m_InvaderHitWallPreviousFrame{ false };
+	bool m_NeedToDropDownAndReverse{ false };
+	bool m_CompletedDropDownAndReverse{ false };
 
 	void detectInvaderCollisons(
 		std::vector<GameObject>& objects, 

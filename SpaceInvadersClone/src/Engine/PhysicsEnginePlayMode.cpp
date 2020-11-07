@@ -104,7 +104,48 @@ void PhysicsEnginePlayMode::detectPlayerCollisionsAndInvaderDirecton(
 			sf::Vector2f currentSize{ currentTransfrom->getSize() };
 
 			// Handle the direction and descent of the invaders
-
+			if (currentTag == "invader")
+			{
+				// This is an invader
+				if (!m_NeedToDropDownAndReverse &&
+					!m_InvaderHitWallThisFrame)
+				{
+					// currently no need to dropdown and reverse from the previous frame
+					// or any hits this frame
+					if (currentLocation.x >= WorldState::WORLD_WIDTH - currentSize.x)
+					{
+						// The invader passed it's furthest right position
+						if (std::static_pointer_cast<InvaderUpdateComponent>
+							((*it).getFirstUpdateComponent())->isMovingRight())
+						{
+							// The invader is travelling right, so set the flag that an invader
+							// has collided with the wall
+							m_InvaderHitWallThisFrame = true;
+						}
+					}
+					else if (currentLocation.x < 0)
+					{
+						// This invader is past the furthes left position
+						if (!std::static_pointer_cast<InvaderUpdateComponent>
+							((*it).getFirstUpdateComponent())->isMovingRight())
+						{
+							// The invader is travelling left, so set the flag that an invader
+							// has collided
+							m_InvaderHitWallThisFrame = true;
+						}
+					}
+				}
+				else if (m_NeedToDropDownAndReverse && !m_InvaderHitWallPreviousFrame)
+				{
+					// Drop down and reverse has been set
+					if ((*it).hasUpdateComponent())
+					{
+						// Drop down and reverse
+						std::static_pointer_cast<InvaderUpdateComponent>(
+							(*it).getFirstUpdateComponent())->dropDownAndReverse();
+					}
+				}
+			}
 		}
 	}
 }
