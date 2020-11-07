@@ -22,7 +22,7 @@ void BlueprintObjectParser::parseNextObjectForBlueprint(
 		{
 			value = extractStringBetweenTags(
 				lineFromFile, ObjectTags::NAME, ObjectTags::NAME_END);
-
+		
 			bp.setName(value);
 		}
 		else if (lineFromFile.find(ObjectTags::WIDTH) != std::string::npos)
@@ -66,6 +66,8 @@ void BlueprintObjectParser::parseNextObjectForBlueprint(
 				lineFromFile, 
 				ObjectTags::ENCOMPASSING_RECT_COLLIDER, 
 				ObjectTags::ENCOMPASSING_RECT_COLLIDER_END);
+
+			bp.setEncompassingRectCollider(value);
 		}
 		else if (lineFromFile.find(ObjectTags::END_OF_OBJECT) != std::string::npos)
 		{
@@ -78,7 +80,7 @@ std::string BlueprintObjectParser::extractStringBetweenTags(
 	std::string stringToSearch, std::string startTag, std::string endTag)
 {
 	int start = startTag.length();
-	int count{ stringToSearch.length() - startTag.length() - endTag.length() };
+	int count{ (int)stringToSearch.length() - (int)startTag.length() - (int)endTag.length() };
 
 	std::string stringBetweenTags{ stringToSearch.substr(start, count) };
 	return stringBetweenTags;

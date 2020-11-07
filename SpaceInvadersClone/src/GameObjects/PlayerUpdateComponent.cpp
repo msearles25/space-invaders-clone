@@ -34,7 +34,7 @@ void PlayerUpdateComponent::update(float fps)
 		m_TC->getSize().x, m_TC->getSize().y);
 
 	// Make sure the ship doesn't go out of the map/allowed area
-	if (m_TC->getLocation().x > WorldState::WORLD_WIDTH - m_TC->getSize())
+	if (m_TC->getLocation().x > WorldState::WORLD_WIDTH - m_TC->getSize().x)
 	{
 		m_TC->getLocation().x = WorldState::WORLD_WIDTH - m_TC->getSize().x;
 	}

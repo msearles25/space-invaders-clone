@@ -147,6 +147,8 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="src\Engine\PhysicsEnginePlayMode.cpp" />
+    <ClCompile Include="src\GameObjects\BulletSpawner.cpp" />
     <ClCompile Include="src\FileIO\LevelManager.cpp" />
     <ClCompile Include="src\FileIO\GameObjectSharer.cpp" />
     <ClCompile Include="src\FileIO\GameObjectFactoryPlayMode.cpp" />
@@ -185,6 +187,8 @@
     <ClCompile Include="src\GameObjects\UpdateComponent.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="src\Engine\PhysicsEnginePlayMode.h" />
+    <ClInclude Include="src\GameObjects\BulletSpawner.h" />
     <ClInclude Include="src\FileIO\LevelManager.h" />
     <ClInclude Include="src\FileIO\GameObjectSharer.h" />
     <ClInclude Include="src\FileIO\GameObjectFactoryPlayMode.h" />

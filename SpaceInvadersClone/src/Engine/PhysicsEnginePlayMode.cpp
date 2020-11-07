@@ -64,7 +64,7 @@ void PhysicsEnginePlayMode::detectPlayerCollisionsAndInvaderDirecton(
 	auto it{ objects.begin() };
 	auto end{ objects.end() };
 
-	for (it; it < end; ++it)
+	for (it; it != end; ++it)
 	{
 		if((*it).isActive() 
 			&& (*it).hasCollider()

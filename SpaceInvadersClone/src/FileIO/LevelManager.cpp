@@ -5,7 +5,13 @@
 void LevelManager::loadGameObjectsForPlayMode(std::string screenToLoad)
 {
 	m_GameObjects.clear();
-	std::string levelToLoad{ "" + WORLD_FOLDER + SLASH + screenToLoad};
+	std::string levelToLoad{ 
+		"" + 
+		CONTENT_FOLDER + 
+		SLASH + 
+		WORLD_FOLDER + 
+		SLASH + 
+		screenToLoad };
 
 	PlayModeObjectLoader pmol;
 	pmol.loadGameObjectForPlayMode(levelToLoad, m_GameObjects);
@@ -23,10 +29,11 @@ void LevelManager::runStartPhase()
 	auto it{ m_GameObjects.begin() };
 	auto end{ m_GameObjects.end() };
 
-	for (it; it < end; ++it)
+	for (it; it != end; ++it)
 	{
 		(*it).start(this);
 	}
+	activateAllGameObjects();
 }
 
 void LevelManager::activateAllGameObjects()
@@ -34,7 +41,7 @@ void LevelManager::activateAllGameObjects()
 	auto it{ m_GameObjects.begin() };
 	auto end{ m_GameObjects.end() };
 
-	for (it; it < end; ++it)
+	for (it; it != end; ++it)
 	{
 		(*it).setActive();
 	}

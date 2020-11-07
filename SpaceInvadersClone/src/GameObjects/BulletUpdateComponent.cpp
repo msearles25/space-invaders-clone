@@ -50,7 +50,7 @@ void BulletUpdateComponent::update(float fps)
 {
 	if (m_IsSpawned)
 	{
-		if (isMovingUp)
+		if (isMovingUp())
 		{
 			m_TC->getLocation().y -= m_Speed * fps;
 		}

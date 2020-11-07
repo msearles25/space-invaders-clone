@@ -4,7 +4,16 @@
 
 class BulletSpawner;
 
-void GameInputHandler::initialize() {}
+void GameInputHandler::initialize() 
+{
+	m_PUC = std::static_pointer_cast<PlayerUpdateComponent>(
+		getPointerToScreenManagerRemoteControl()->shareGameObjectSharer()
+		.findFirstObjectWithTag("Player")
+		.getComponentByTypeAndSpecificType("update", "player"));
+
+	m_PTC = getPointerToScreenManagerRemoteControl()->shareGameObjectSharer()
+		.findFirstObjectWithTag("Player").getTransformComponent();
+}
 
 void GameInputHandler::handleGamepad() 
 {
@@ -14,11 +23,11 @@ void GameInputHandler::handleGamepad()
 
 	if (x < deadZone && x > -deadZone)
 	{
-		x = 0;
+		x = 0.0f;
 	}
 	if (y < deadZone && y > -deadZone)
 	{
-		y = 0;
+		y = 0.0f;
 	}
 
 	m_PUC->updateShipTravelWithController(x, y);

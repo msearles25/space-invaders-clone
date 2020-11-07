@@ -111,7 +111,7 @@ void GameObject::start(GameObjectSharer* gos)
 {
 	auto it{ m_Components.begin() };
 	auto end{ m_Components.end() };
-	for (it; it < end; ++it)
+	for (it; it != end; ++it)
 	{
 		(*it)->start(gos, this);
 	}
@@ -123,7 +123,7 @@ std::shared_ptr<Component> GameObject::getComponentByTypeAndSpecificType(
 {
 	auto it{ m_Components.begin() };
 	auto end{ m_Components.end() };
-	for (it; it < end; ++it)
+	for (it; it != end; ++it)
 	{
 		if ((*it)->getType() == type)
 		{
@@ -135,7 +135,8 @@ std::shared_ptr<Component> GameObject::getComponentByTypeAndSpecificType(
 	}
 #ifdef debuggingErrors
 	std::cout << "GameObject.cpp::getComponentByTypeAndSpecificType - "
-		<< "COMPONENT NOT FOUND, ERROR!\n";
+		<< "Component: (" + type + ", " + specificType + ")"
+		<< " - NOT FOUND, ERROR!\n";
 #endif // debuggingErrors
 
 }
