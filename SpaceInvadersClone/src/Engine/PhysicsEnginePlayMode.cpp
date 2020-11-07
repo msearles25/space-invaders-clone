@@ -149,3 +149,16 @@ void PhysicsEnginePlayMode::detectPlayerCollisionsAndInvaderDirecton(
 		}
 	}
 }
+
+void PhysicsEnginePlayMode::handleInvaderDirection()
+{
+	if (m_InvaderHitWallThisFrame)
+	{
+		m_NeedToDropDownAndReverse = true;
+		m_InvaderHitWallThisFrame = false;
+	}
+	else
+	{
+		m_NeedToDropDownAndReverse = false;
+	}
+}
