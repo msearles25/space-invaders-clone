@@ -147,6 +147,13 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="src\FileIO\LevelManager.cpp" />
+    <ClCompile Include="src\FileIO\GameObjectSharer.cpp" />
+    <ClCompile Include="src\FileIO\GameObjectFactoryPlayMode.cpp" />
+    <ClCompile Include="src\FileIO\PlayModeObjectLoader.cpp" />
+    <ClCompile Include="src\FileIO\BlueprintObjectParser.cpp" />
+    <ClCompile Include="src\FileIO\ObjectTags.cpp" />
+    <ClCompile Include="src\FileIO\GameObjectBluprint.cpp" />
     <ClCompile Include="src\GameObjects\GameObject.cpp" />
     <ClCompile Include="src\GameObjects\PlayerUpdateComponent.cpp" />
     <ClCompile Include="src\GameObjects\InvaderUpdateComponent.cpp" />
@@ -178,6 +185,13 @@
     <ClCompile Include="src\GameObjects\UpdateComponent.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="src\FileIO\LevelManager.h" />
+    <ClInclude Include="src\FileIO\GameObjectSharer.h" />
+    <ClInclude Include="src\FileIO\GameObjectFactoryPlayMode.h" />
+    <ClInclude Include="src\FileIO\PlayModeObjectLoader.h" />
+    <ClInclude Include="src\FileIO\BlueprintObjectParser.h" />
+    <ClInclude Include="src\FileIO\ObjectTags.h" />
+    <ClInclude Include="src\FileIO\GameObjectBluprint.h" />
     <ClInclude Include="src\GameObjects\GameObject.h" />
     <ClInclude Include="src\GameObjects\PlayerUpdateComponent.h" />
     <ClInclude Include="src\GameObjects\InvaderUpdateComponent.h" />

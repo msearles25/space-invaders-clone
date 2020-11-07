@@ -15,3 +15,6 @@ sfml-system-d.lib
 sfml-network-d.lib
 sfml-audio-d.lib
 6. Grab the .dll's from your SFML-2.5.1\bin folder, put them into the SpaceInvadersClone folder.
+
+Background belongs to: 
+https://opengameart.org/content/background-night
