@@ -1,6 +1,6 @@
 #pragma once
 #include "GameObject.h"
-#include "GameObjectSharer.h"
+#include "../FileIO/GameObjectSharer.h"
 #include "RectColliderComponent.h"
 #include "TransformComponent.h"
 #include "UpdateComponent.h"

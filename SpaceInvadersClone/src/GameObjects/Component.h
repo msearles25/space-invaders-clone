@@ -1,6 +1,6 @@
 #pragma once
 #include <string>
-#include "GameObjectSharer.h"
+#include "../FileIO/GameObjectSharer.h"
 
 class GameObject;
 

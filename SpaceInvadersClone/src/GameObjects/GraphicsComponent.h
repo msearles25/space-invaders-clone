@@ -3,7 +3,7 @@
 #include <string>
 #include <SFML/Graphics.hpp>
 #include "Component.h"
-#include "GameObjectSharer.h"
+#include "../FileIO/GameObjectSharer.h"
 #include "TransformComponent.h"
 
 class GraphicsComponent : public Component

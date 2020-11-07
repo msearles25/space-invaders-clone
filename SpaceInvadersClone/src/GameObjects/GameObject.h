@@ -3,7 +3,7 @@
 #include <vector>
 #include <SFML/Graphics.hpp>
 #include "Component.h"
-#include "GameObjectSharer.h"
+#include "../FileIO/GameObjectSharer.h"
 #include "GraphicsComponent.h"
 #include "UpdateComponent.h"
 
