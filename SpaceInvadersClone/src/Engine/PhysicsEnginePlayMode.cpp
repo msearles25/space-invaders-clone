@@ -171,3 +171,13 @@ void PhysicsEnginePlayMode::initialize(GameObjectSharer& gos)
 
 	m_Player = &gos.findFirstObjectWithTag("Player");
 }
+
+void PhysicsEnginePlayMode::detectCollisions(
+	std::vector<GameObject>& objects,
+	const std::vector<int>& bulletPositions)
+{
+	detectInvaderCollisons(objects, bulletPositions);
+	detectPlayerCollisionsAndInvaderDirecton(objects, bulletPositions);
+
+	handleInvaderDirection();
+}
