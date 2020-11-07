@@ -162,3 +162,12 @@ void PhysicsEnginePlayMode::handleInvaderDirection()
 		m_NeedToDropDownAndReverse = false;
 	}
 }
+
+void PhysicsEnginePlayMode::initialize(GameObjectSharer& gos)
+{
+	m_PUC = std::static_pointer_cast<PlayerUpdateComponent>(
+		gos.findFirstObjectWithTag("Player")
+		.getComponentByTypeAndSpecificType("update", "player"));
+
+	m_Player = &gos.findFirstObjectWithTag("Player");
+}
