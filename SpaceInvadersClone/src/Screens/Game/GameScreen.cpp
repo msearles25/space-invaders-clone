@@ -153,6 +153,15 @@ void GameScreen::draw(sf::RenderWindow& window)
 	window.setView(m_View);
 	window.draw(m_BackgroundSprite);
 
+	// Draw the GameObject instances
+	auto it{ m_ScreenManagerRemoteControl->getGameObjects().begin() };
+	auto end{ m_ScreenManagerRemoteControl->getGameObjects().end() };
+
+	for (it; it != end; ++it)
+	{
+		(*it).draw(window);
+	}
+
 	// Draw the UIPanel view
 	Screen::draw(window);
 }
